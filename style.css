@@ -1,0 +1,245 @@
+:root {
+  --font-principal: "Handjet", sans-serif;
+  --font-secundario: "Times New Roman", Times, serif;
+}
+
+body {
+  background: rgb(251, 246, 63);
+  background: radial-gradient(
+    circle,
+    rgba(251, 246, 63, 0.9467436632856268) 0%,
+    rgba(252, 98, 70, 1) 100%
+  );
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Añadir sombra para mejor legibilidad */
+  font-display: swap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input[type="radio"]:checked + label svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+svg {
+  transition: fill 0.3s, stroke 0.3s;
+  width: 50px;
+  height: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.title {
+  font-family: var(--font-principal);
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.sub-title {
+  font-family: var(--font-secundario);
+  font-size: 28px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+}
+
+/* From Uiverse.io by boryanakrasteva */
+.input-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.input {
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  transition: 0.2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover > .icon {
+  animation: anim 1s linear;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
+  }
+}
+
+.button {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.button:active {
+  background-color: rgb(255, 56, 86);
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+.list-pokemon {
+  font-family: var(--font-principal);
+  font-size: 24px;
+  font-style: italic;
+}
+
+.container {
+  margin-right: 5px;
+  display: inline-block;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  animation: flip 4s infinite;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.borderFemale {
+  border: 3px solid #bf0fda;
+  border-radius: 8px;
+}
+
+.borderMale {
+  border: 3px solid #0c22ce;
+  border-radius: 8px;
+}
+
+.none {
+  display: none;
+}
+
+.card-1 {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.card-tittle {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Handjet", sans-serif;
+  font-weight: 300;
+}
+
+.gender-selection {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.card-info {
+  font-family: var(--font-secundario);
+  font-style: italic;
+  font-size: 20px;
+}
+
+.creditos {
+  display: grid;
+  place-items: center; /* Centra horizontal y verticalmente */
+  width: 100%;
+  min-height: 250px;
+}
+
+.iconos-redes-sociales {
+  margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.svg-footer {
+  height: 60px;
+  width: 60px;
+  transition: fill 0.3s, stroke 0.3s, transform 0.3s ease;
+}
+
+.creditos .link-redes {
+  margin-right: 15px;
+}
+
+.derecho-de-autor {
+  font-size: 18px;
+  color: #000000;
+}
+
+.svg-footer:hover {
+  fill: #ffffff;
+  stroke: #ffffff;
+  transform: scale(1.1); /* Cambio más suave, menos agresivo */
+  transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
