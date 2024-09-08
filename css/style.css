@@ -12,9 +12,8 @@ body {
     rgba(251, 246, 63, 0.9467436632856268) 0%,
     rgba(252, 98, 70, 1) 100%
   );
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Añadir sombra para mejor legibilidad */
-  font-display: swap;
+  color: #000;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
 }
 
 a {
@@ -51,11 +50,13 @@ svg {
   font-family: var(--font-principal);
   font-size: 40px;
   font-weight: 300;
+  font-display: swap;
 }
 
 .sub-title {
   font-family: var(--font-secundario);
   font-size: 28px;
+  font-display: swap;
 }
 
 .logo-img {
@@ -124,6 +125,7 @@ svg {
   font-family: var(--font-principal);
   font-size: 24px;
   font-style: italic;
+  font-display: swap;
 }
 
 /*El contenedor de la imagen */
@@ -183,8 +185,9 @@ svg {
 .card-tittle {
   text-align: center;
   font-size: 50px;
-  font-family: "Handjet", sans-serif;
+  font-family: var(--font-principal);
   font-weight: 300;
+  font-display: swap;
 }
 
 /*Estilos de los generos*/
@@ -197,6 +200,7 @@ svg {
   font-family: var(--font-secundario);
   font-style: italic;
   font-size: 20px;
+  font-display: swap;
 }
 
 /*Estilos del footer*/
