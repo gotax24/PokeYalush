@@ -3,6 +3,8 @@
   --font-secundario: "Times New Roman", Times, serif;
 }
 
+/*Estilos generales*/
+
 body {
   background: rgb(251, 246, 63);
   background: radial-gradient(
@@ -37,6 +39,8 @@ svg {
   height: 50px;
 }
 
+/*Estilo header*/
+
 .header {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
@@ -59,6 +63,7 @@ svg {
   height: 80px;
 }
 
+/*Estilos input*/
 /* From Uiverse.io by boryanakrasteva */
 .input-container {
   display: flex;
@@ -88,17 +93,7 @@ svg {
   animation: anim 1s linear;
 }
 
-@keyframes anim {
-  0%,
-  100% {
-    transform: translateY(calc(-50% - 5px)) scale(1);
-  }
-
-  50% {
-    transform: translateY(calc(-50% - 5px)) scale(1.1);
-  }
-}
-
+/*Estilo del boton*/
 .button {
   padding: 17px 40px;
   border-radius: 10px;
@@ -123,11 +118,15 @@ svg {
   transition: 200ms;
 }
 
+/*Estilos de la lista pokemon*/
+
 .list-pokemon {
   font-family: var(--font-principal);
   font-size: 24px;
   font-style: italic;
 }
+
+/*El contenedor de la imagen */
 
 .container {
   margin-right: 5px;
@@ -173,6 +172,7 @@ svg {
   display: none;
 }
 
+/*Estilos de la card*/
 .card-1 {
   display: block;
   width: 500px;
@@ -187,6 +187,7 @@ svg {
   font-weight: 300;
 }
 
+/*Estilos de los generos*/
 .gender-selection {
   margin: 0 auto;
   width: 200px;
@@ -198,14 +199,15 @@ svg {
   font-size: 20px;
 }
 
-.creditos {
+/*Estilos del footer*/
+.credits {
   display: grid;
   place-items: center; /* Centra horizontal y verticalmente */
   width: 100%;
   min-height: 250px;
 }
 
-.iconos-redes-sociales {
+.social-network-icons {
   margin-bottom: 10px;
   margin-top: auto;
 }
@@ -216,11 +218,11 @@ svg {
   transition: fill 0.3s, stroke 0.3s, transform 0.3s ease;
 }
 
-.creditos .link-redes {
+.credits .link-networks {
   margin-right: 15px;
 }
 
-.derecho-de-autor {
+.copyright {
   font-size: 18px;
   color: #000000;
 }
@@ -241,5 +243,16 @@ svg {
   }
   100% {
     transform: rotateY(360deg);
+  }
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
   }
 }

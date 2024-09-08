@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Seo-->
     <meta
       name="description"
       content="Descubre toda la información de los Pokémon en Pokeyalush, tu mejor opción para estadísticas, tipos y habilidades de Pokémon."
@@ -12,9 +13,12 @@
       name="keywords"
       content="pokemon,pokedex,pikachu,ash,lista,pokemon de fuego,pokemon de agua, pokemon de eletricidad,luchas de pokemones"
     />
-    <title>Pokeyalush - La Mejor Pokédex de Pokémon</title>
+    <title>Pokeyalush - The Best Pokedex on the Internet</title>
+    <!-- Hoja css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!--Icon de la pagina-->
     <link rel="icon" href="img/icon.svg" type="image/svg+xml" />
+    <!--Font google-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -27,13 +31,13 @@
     <a href="index.html" aria-label="Home">
       <header class="header">
         <img src="img/icon.svg" class="logo-img" alt="Logo de la pagina" />
-        <h1 class="title">Bienvenido a PokeYalush</h1>
+        <h1 class="title">Welcome to PokeYalush</h1>
       </header>
     </a>
     <main class="main-container">
       <article class="card-1">
         <header class="card-header">
-          <h2 id="nombre" class="card-tittle"></h2>
+          <h2 id="name" class="card-tittle"></h2>
           <div class="img-card" id="image" loading="lazy"></div>
           <section id="gender" class="gender-selection">
             <input type="radio" id="male" name="gender" style="display: none" />
@@ -133,31 +137,31 @@
         <section class="card-info">
           <div class="type">
             <h3 class="type-tittle">Type</h3>
-            <ul id="tipo" aria-label="Pokemon Type"></ul>
+            <ul id="type" aria-label="Pokemon Type"></ul>
           </div>
           <div class="info">
             <p id="base"></p>
-            <div id="divAltura"></div>
+            <div id="divHeight"></div>
           </div>
           <div class="stats">
-            <h3>Estadísticas:</h3>
-            <ul id="estadistica" aria-label="Pokemon Statistics"></ul>
+            <h3>Statistics:</h3>
+            <ul id="statistics" aria-label="Pokemon Statistics"></ul>
           </div>
           <div class="ability">
-            <h3>Habilidad:</h3>
-            <ul id="habilidades" aria-label="Pokemon Abilities"></ul>
+            <h3>Skills:</h3>
+            <ul id="skills" aria-label="Pokemon Abilities"></ul>
           </div>
         </section>
       </article>
     </main>
-    <footer id="footer" class="creditos">
+    <footer id="footer" class="credits">
       <div></div>
-      <div class="iconos-redes-sociales">
+      <div class="social-network-icons">
         <a
           href="https://github.com/gotax24?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             viewBox="0 0 24 24"
@@ -183,7 +187,7 @@
           href="https://www.linkedin.com/in/ernesto-bracho/"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             fill="#000000"
@@ -221,7 +225,7 @@
           href="mailto:dev.ejbr@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             version="1.1"
@@ -250,10 +254,8 @@
           </svg>
         </a>
       </div>
-      <div class="derecho-de-autor">
-        Creador: Ing. Ernesto Bracho 2024 &#169;
-      </div>
+      <div class="copyright">Creator: Ing. Ernesto Bracho 2024 &#169;</div>
     </footer>
-    <script src="./js/detalle.js"></script>
+    <script src="./js/details.js" defer></script>
   </body>
 </html>

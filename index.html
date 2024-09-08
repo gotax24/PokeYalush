@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Seo-->
     <meta
       name="description"
-      content="Descubre toda la información de los Pokémon en Pokeyalush, tu mejor opción para estadísticas, tipos y habilidades de Pokémon."
+      content="Discover all the information about Pokémon in Pokeyalush, your best option for Pokémon stats, types and abilities."
     />
     <meta name="author" content="Ing. Ernesto Bracho R" />
     <meta
       name="keywords"
       content="pokemon,pokedex,pikachu,ash,lista,pokemon de fuego,pokemon de agua, pokemon de eletricidad,luchas de pokemones"
     />
-    <title>Pokeyalush - La Mejor Pokédex de Pokémon</title>
+    <title>Pokeyalush - The Best Pokedex on the Internet</title>
+    <!-- Hoja css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!--Icon de la pagina-->
     <link rel="icon" href="img/icon.svg" type="image/svg+xml" />
+    <!--Font google-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -25,8 +29,12 @@
   </head>
   <body>
     <header class="header">
-      <img src="img/icon.svg" class="logo-img" alt="Logo de la pagina" />
-      <h1 class="title">Bienvenido a PokeYalush</h1>
+      <img
+        src="img/icon.svg"
+        class="logo-img"
+        alt="Logo de la pagina |Logo of the page "
+      />
+      <h1 class="title">Welcome to PokeYalush</h1>
     </header>
     <main>
       <!-- /* From Uiverse.io by boryanakrasteva */  -->
@@ -37,29 +45,29 @@
           name="pokemon"
           class="input"
           id="pokemon"
-          placeholder="Busca el pokemon"
-          aria-label="Input de búsqueda de pokémon"
+          placeholder="Search the pokemon"
+          aria-label="Input for Search the pokemon"
         />
 
         <button class="button" onclick="searchPokemon()" tabindex="0">
-          Buscar
+          Search
         </button>
       </div>
       <div>
         <ol id="list" class="list-pokemon"></ol>
-        <button id="loadMore" class="button" aria-label="Mostrar más Pokemones">
-          Mostrar más Pokemones
+        <button id="loadMore" class="button" aria-label="Show more Pokemons">
+          Show more Pokemons
         </button>
       </div>
     </main>
-    <footer id="footer" class="creditos">
+    <footer id="footer" class="credits">
       <div></div>
-      <address class="iconos-redes-sociales">
+      <address class="social-network-icons">
         <a
           href="https://github.com/gotax24?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             viewBox="0 0 24 24"
@@ -85,7 +93,7 @@
           href="https://www.linkedin.com/in/ernesto-bracho/"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             fill="#000000"
@@ -123,7 +131,7 @@
           href="mailto:dev.ejbr@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="link-redes"
+          class="link-networks"
         >
           <svg
             version="1.1"
@@ -152,9 +160,7 @@
           </svg>
         </a>
       </address>
-      <div class="derecho-de-autor">
-        Creador: Ing. Ernesto Bracho 2024 &#169;
-      </div>
+      <div class="copyright">Creator: Ing. Ernesto Bracho 2024 &#169;</div>
     </footer>
     <script src="./js/app.js" defer></script>
   </body>

@@ -1,28 +1,32 @@
+//funcion para buscar el pokemon
 const searchPokemon = async () => {
-  const nombre = document.getElementById("pokemon").value.trim().toLowerCase();
-  if (!nombre) {
-    alert("Por favor ingrese un nombre de Pokémon.");
+  //Obtener el nombre del pokemon 
+  const name = document.getElementById("pokemon").value.trim().toLowerCase(); 
+  if (!name) {
+    alert("Please enter a Pokémon name.");
     return;
   }
-  window.location.href = `detalle.html?pokemon=${nombre}`;
+  //Pasarle la variable al otro js
+  window.location.href = `details.html?pokemon=${name}`;
 };
 
 let currentPage = 0;
-const resultsPerPage = 50; // Valor supuesto, ajustar según sea necesario.
+const resultsPerPage = 50;
 
-const loadMore = (datos) => {
-  const pokemonArray = datos.results; // No necesitas `.push()`
+//Funcion para mostrar pokemones
+const loadMore = (data) => {
+  const pokemonArray = data.results;
 
   const list = document.getElementById("list");
   const start = currentPage * resultsPerPage;
   const end = start + resultsPerPage;
-  const pokemonsToShow = pokemonArray.slice(start, end); // Corrección del slice
+  const pokemonsToShow = pokemonArray.slice(start, end); 
 
   pokemonsToShow.forEach((pokemon) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
 
-    a.href = `detalle.html?pokemon=${pokemon.name}`;
+    a.href = `details.html?pokemon=${pokemon.name}`;
     a.textContent = pokemon.name;
 
     li.appendChild(a);
@@ -35,10 +39,11 @@ const loadMore = (datos) => {
   if (end >= pokemonArray.length) {
     const loadMoreButton = document.getElementById("loadMore");
     loadMoreButton.disabled = true;
-    loadMoreButton.textContent = "No hay más Pokémon";
+    loadMoreButton.textContent = "There are no more Pokémon";
   }
 };
 
+//Obtencion de la info de la api
 const fetchPokemonList = async (limit = 100, offset = 0) => {
   try {
     const response = await fetch(
@@ -49,17 +54,18 @@ const fetchPokemonList = async (limit = 100, offset = 0) => {
     }
     return await response.json();
   } catch (error) {
-    console.error("Error al obtener la lista de Pokémon:", error);
+    console.error("Error getting list of Pokémon:", error);
   }
 };
 
+//Ejecucion de las funciones
 const pokemonList = async () => {
-  const datos = await fetchPokemonList(10000);
-  if (datos) {
-    loadMore(datos);
+  const data = await fetchPokemonList(10000);
+  if (data) {
+    loadMore(data);
     document
       .getElementById("loadMore")
-      .addEventListener("click", () => loadMore(datos));
+      .addEventListener("click", () => loadMore(data));
   }
 };
 

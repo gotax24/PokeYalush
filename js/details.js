@@ -19,26 +19,28 @@ const typeEmojis = {
   flying: "🪽",
 };
 
-const nameType = (datos) => {
-  const ul = document.getElementById("tipo");
+//Mostrar el nombre el tipo y la base experience
+const nameType = (data) => {
+  const ul = document.getElementById("type");
   ul.innerHTML = ""; // Limpiamos cualquier dato previo.
 
-  const h1 = document.getElementById("nombre");
-  h1.textContent = datos.name.toUpperCase();
+  const h1 = document.getElementById("name");
+  h1.textContent = data.name.toUpperCase();
 
-  datos.types.forEach((tipo) => {
+  data.types.forEach((tipo) => {
     const li = document.createElement("li");
     li.textContent = `${typeEmojis[tipo.type.name] || ""} ${tipo.type.name}`;
     ul.appendChild(li);
   });
 
   const p = document.getElementById("base");
-  p.innerHTML = `Base experience = ${datos.base_experience} XP`;
+  p.innerHTML = `Base experience = ${data.base_experience} XP`;
 };
 
 const divImage = document.getElementById("image");
 
-const createPokemonImage = (datos, gender) => {
+//Funcion para traer la imagen
+const createPokemonImage = (data, gender) => {
   const container = document.createElement("div");
   container.className = "container";
   container.id = `div${gender}`;
@@ -52,10 +54,10 @@ const createPokemonImage = (datos, gender) => {
 
   imgFront.src =
     gender === "Male"
-      ? datos.sprites.front_default
-      : datos.sprites.front_female;
+      ? data.sprites.front_default
+      : data.sprites.front_female;
   imgBack.src =
-    gender === "Male" ? datos.sprites.back_default : datos.sprites.back_female;
+    gender === "Male" ? data.sprites.back_default : data.sprites.back_female;
 
   imgFront.className = "front";
   imgFront.id = `imgFront${gender}`;
@@ -126,38 +128,42 @@ const gender = () => {
   }
 };
 
-const abilities = (datos) => {
-  const ul = document.getElementById("habilidades");
+//Mostramos las habilidades
+const abilities = (data) => {
+  const ul = document.getElementById("skills");
   ul.innerHTML = ""; // Limpiar el contenido anterior
 
-  datos.abilities.forEach((abilityObject) => {
+  data.abilities.forEach((abilityObject) => {
     const li = document.createElement("li");
     li.innerText = abilityObject.ability.name;
     ul.appendChild(li);
   });
 };
 
-const heigth_weigth = (datos) => {
-  const div = document.getElementById("divAltura");
+//Mostrar la altura peso y national number
+const heigth_weigth = (data) => {
+  const div = document.getElementById("divHeight");
   div.innerHTML = `
-    <p>Height = ${datos.height / 10} M</p>
-    <p>Weight = ${datos.weight / 10} Kg</p>
-    <p>National number = ${datos.order}</p>`;
+    <p>Height = ${data.height / 10} M</p>
+    <p>Weight = ${data.weight / 10} Kg</p>
+    <p>National number = ${data.order}</p>`;
 };
 
-const stats = (datos) => {
-  const ul = document.getElementById("estadistica");
+//Mostrando las estadisticas
+const stats = (data) => {
+  const ul = document.getElementById("statistics");
   ul.innerHTML = ""; // Limpiar el contenido anterior
 
-  datos.stats.forEach((stat) => {
+  data.stats.forEach((stat) => {
     const li = document.createElement("li");
     li.innerText = `${stat.stat.name} = ${stat.base_stat}`;
     ul.appendChild(li);
   });
 };
 
+//Ejecutando las funciones
 const pokemonDetails = async () => {
-  const urlParams = new URLSearchParams(window.location.search); // Corrección de typo
+  const urlParams = new URLSearchParams(window.location.search);
   const pokemonName = urlParams.get("pokemon");
 
   if (pokemonName) {
@@ -181,14 +187,14 @@ const pokemonDetails = async () => {
         stats(pokemon);
         abilities(pokemon);
       } else {
-        alert(`Error: Pokémon ${pokemonName} no encontrado.`);
+        alert(`Error: Pokémon ${pokemonName} not found.`);
       }
     } catch (error) {
-      console.error("Error al obtener los detalles del Pokémon:", error);
-      alert("Hubo un problema al cargar los detalles del Pokémon.");
+      console.error("Error getting Pokémon details:", error);
+      alert("There was a problem loading the Pokémon details.");
     }
   } else {
-    alert("Nombre de Pokémon no proporcionado.");
+    alert("Pokemon name not provided.");
   }
 };
 
